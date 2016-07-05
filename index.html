@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="game-engine-origin" content="http://www.isogenicengine.com">
+	<meta http-equiv="X-UA-Compatible" content="IE=9" >
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="/css/styles.css">
+	<script type="text/javascript" src="/js/main.js"></script>
+    <script type="text/javascript" src="/js/inventory.js"></script>
+
+	<title>CokeMusic</title>
+
+	<!-- Isogenic Loader -->
+	<script type="text/javascript">
+		var igeRoot = '/engine/';
+		var rootPath = '/';
+	</script>
+	<script type="text/javascript" src="/engine/loader.js"></script>
+</head>
+<body>
+    <div class="igeLoading loadingFloat">
+        <div class="loadbox" id="loadbox">
+            <p>Just a moment... </p>
+        </div>
+    </div>
+
+    <div class="bottom-bar">
+    	<div class="contain clearfix">
+    		<div class="chat-input-wrapper">
+    			<input id="chat-input" class="chat-input" type="text">
+    		</div>
+
+    		<div class="actions-wrapper">
+                <ul>
+                    <li><a id="navigation"  class="action-item"><i></i></a></li>
+                    <li><a id="message"     class="action-item"><i></i></a></li>
+                    <li><a id="decibals"    class="action-item"><i></i></a></li>
+                    <li><a id="backpack"    class="action-item"><i></i></a></li>
+                    <li><a id="catalogue"   class="action-item"><i></i></a></li>
+                    <li><a id="music"       class="action-item"><i></i></a></li>
+                    <li><a id="help"        class="action-item"><i></i></a></li>
+                </ul>
+    		</div>
+
+    		<div class="my-coke" onclick="ige.editor.toggle()">
+                <img src="./assets/ui/bar-coke-music.jpg">
+    		</div>
+    	</div>
+    </div>
+
+    <!-- INVENTORY -->
+    <div class="contain">
+        <div id="inventory">
+            <div class="i-move">
+                <p class="title">Your Items</p>
+                <a><img src="./assets/ui/cc.backpack.closebox.active.png"></a>
+            </div>
+
+            <ul class="inventory-data">
+                <li data-page="1">
+                    <ul class="items clearfix">
+                        <li><a data-item="sofa_coke"><img src="./assets/furniture/icons/sofa_coke.png"></a></li>
+                        <li><a data-item="sofa_coke" class=""><img src="./assets/furniture/icons/sofa_coke.png"></a></li>
+                        <li><a data-item="sofa_coke"><img src="./assets/furniture/icons/sofa_coke.png"></a></li>
+                        <li><a data-item="tv"><img src="./assets/furniture/icons/tv_small.png"></a></li>
+                        <li><a data-item="sofa_coke"><img src="./assets/furniture/icons/sofa_coke.png"></a></li>
+                        <li><a data-item="sofa_coke"><img src="./assets/furniture/icons/sofa_coke.png"></a></li>
+                        <li><a data-item="sofa_coke"><img src="./assets/furniture/icons/sofa_coke.png"></a></li>
+                        <li><a data-item="tv"><img src="./assets/furniture/icons/tv_small.png"></a></li>
+                        <li><a data-item="sofa_coke"><img src="./assets/furniture/icons/sofa_coke.png"></a></li>
+                        <li><a data-item="sofa_coke"><img src="./assets/furniture/icons/sofa_coke.png"></a></li>
+                        <li><a data-item="fridge"><img src="./assets/furniture/icons/5001_minibar_small.png"></a></li>
+                        <li><a data-item="fridge"><img src="./assets/furniture/icons/5001_minibar_small.png"></a></li>
+                        <li><a data-item="fridge"><img src="./assets/furniture/icons/5001_minibar_small.png"></a></li>
+                        <li><a data-item="beanbag"><img src="./assets/furniture/icons/beanbag_small.png"></a></li>
+                        <li><a data-item="beanbag"><img src="./assets/furniture/icons/beanbag_small.png"></a></li>
+                        <li><a data-item="sofa_coke"><img src="./assets/furniture/icons/sofa_coke.png"></a></li>
+                        <li><a data-item="sofa_coke"><img src="./assets/furniture/icons/sofa_coke.png"></a></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <div class="inventory-navigation">
+                <a class="i-arrow-left"><img src="./assets/ui/cc.pack.leftarrow.png"></a>
+                <span class="i-page-display">Page 1 of 1</span>
+                <a class="i-arrow-right"><img src="./assets/ui/cc.pack.rightarrow.png"></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- NAVIGATION -->
+    <div class="contain">
+        <div id="navigation-ui" class="popup">
+            <div class="nav-ui-title">
+            <h3>Coke Studios Navigation</h3>
+            <a class="close"></a>
+            </div>
+
+            <ul class="nav-ui-tabs">
+                <li data-toggle="nav-world-view">World View</li>
+                <li class="selected" data-toggle="nav-user-studios">User Studios</li>
+                <li data-toggle="nav-v-egos">V-Egos</li>
+            </ul>
+
+            <div id="nav-world-view" class="toggle">
+            world nav
+            </div>
+
+            <div id="nav-user-studios" class="toggle selected">
+            user studios
+            </div>
+
+            <div id="nav-v-egos" class="toggle">
+            v-egos
+            </div>
+        </div>
+    </div>
+
+    <!-- AVATAR EDITOR -->
+    <div class="contain">
+        <div id="avatar-editor" class="popup">
+            <div class="nav-ui-title">
+                <h3>Avatar Editor</h3>
+                <a class="close"></a>
+            </div>
+
+            <div class="content">
+                <ul class="selections">
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- INFOSTAND -->
+    <div class="infostand-wrapper">
+        <div id="infostand">
+            <div class="infostand-contain">
+                <div class="infostand-wrapper-inner">
+                    <div class="stand"></div>
+                    <img class="furniture" src=""></img>
+                </div>
+
+                <div class="infostand-wrapper-text clearfix">
+                    <p class="title"></p>
+                    <p class="description"></p>
+                </div>
+
+                <div class="infostand-wrapper-actions">
+                    <ul>
+                        <li><a id="itemDelete"  class="button blue">Delete</a></li>
+                        <li><a id="itemPickup"  class="button blue">Pick Up</a></li>
+                        <li><a id="itemRotate"  class="button blue">Rotate</a></li>
+                        <li><a id="itemMove"    class="button blue">Move</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
